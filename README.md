@@ -17,6 +17,8 @@ There are several types of tests which can be run:
 * API tests against the deployed API's
 * Integration tests against the deployed HTML
 
+All local tests can be run with the command `npm test`.
+
 ### Local Lambda
 
 Using [jest](https://jestjs.io/), the Lambda functions can be tested, with code coverage.
