@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '10'
+before_install:
+  - sudo apt-get install awscli
+  - npm install
+script:
+  - .travis/build.sh
+notifications:
+  email:
+    - $GITHUB_EMAIL
