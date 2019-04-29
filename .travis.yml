@@ -1,12 +1,8 @@
 language: node_js
 node_js:
-#  - '6'
-#  - '7'
-#  - '8'
-#  - '9'
   - '10'
 before_install:
-#  - sudo apt-get install awscli
+  ## The apt "awscli" client does not support Lambda yet; use pip
   - sudo apt-get install -y python3-pip
   - sudo pip3 install awscli
   - npm install
