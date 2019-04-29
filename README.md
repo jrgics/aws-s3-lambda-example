@@ -1,5 +1,8 @@
 # aws-s3-lambda-example
 
+[![Build Status](http://img.shields.io/travis/hal313/aws-s3-lambda-example/master.svg?style=flat-square)](https://travis-ci.org/hal313/aws-s3-lambda-example)
+[![Dependency Status](http://img.shields.io/david/hal313/aws-s3-lambda-example.svg?style=flat-square)](https://david-dm.org/hal313/aws-s3-lambda-example)
+
 A sample project demonstrating the use of AWS S3, Lambda and Gateway API functionality, as well as testing idioms.
 
 This example serves to illustrate some of the features of AWS, as well as modern and accepted testing and automation methodologies.
