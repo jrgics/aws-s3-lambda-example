@@ -6,7 +6,9 @@ node_js:
 #  - '9'
   - '10'
 before_install:
-  - sudo apt-get install awscli
+#  - sudo apt-get install awscli
+  - sudo apt-get install -y python3-pip
+  - sudo pip3 install awscli
   - npm install
 script:
   - .travis/build.sh
