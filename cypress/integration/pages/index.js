@@ -54,16 +54,6 @@ export class IndexPage {
 
 
     /**
-     * Checks the success message text. If the success message does not contain the
-     * specified text, then the test will fail.
-     *
-     * @param {string} text the text to check
-     */
-    checkResponseSuccessMessage(text) {
-        this.getResponseDivSuccess().should('contain', text);
-    }
-
-    /**
      * Checks the fail message text. If the fail message does not contain the
      * specified text, then the test will fail.
      *
@@ -77,7 +67,7 @@ export class IndexPage {
     /**
      * Gets the "message" DOM element.
      *
-     * @param {Element} the "message" element
+     * @return {Element} the "message" element
      */
     getMessageInput() {
         return cy.get(SELECTOR_MESSAGE_INPUT);
@@ -86,7 +76,7 @@ export class IndexPage {
     /**
      * Gets the "echo" DOM element.
      *
-     * @param {Element} the "echo" element
+     * @return {Element} the "echo" element
      */
     getEchoButton() {
         return cy.get(SELECTOR_ECHO_BUTTON);
@@ -95,7 +85,7 @@ export class IndexPage {
     /**
      * Gets the "reverse" DOM element.
      *
-     * @param {Element} the "reverse" element
+     * @return {Element} the "reverse" element
      */
     getReverseButton() {
         return cy.get(SELECTOR_REVERSE_BUTTON);
@@ -104,7 +94,7 @@ export class IndexPage {
     /**
      * Gets the "uppercase" DOM element.
      *
-     * @param {Element} the "uppercase" element
+     * @return {Element} the "uppercase" element
      */
     getUppercaseButton() {
         return cy.get(SELECTOR_UPPERCASE_BUTTON);
@@ -113,7 +103,7 @@ export class IndexPage {
     /**
      * Gets the "response" DOM element.
      *
-     * @param {Element} the "response" element
+     * @return {Element} the "response" element
      */
     getResponseDiv() {
         return cy.get(SELECTOR_RESPONSE_DIV);
@@ -122,7 +112,7 @@ export class IndexPage {
     /**
      * Gets the "success response" DOM element.
      *
-     * @param {Element} the "success response" element
+     * @return {Element} getResponseDivSuccess the "success response" element
      */
     getResponseDivSuccess() {
         return this.getResponseDiv().find(SELECTOR_RESPONSE_SUCCESS_CLASS);
@@ -131,7 +121,7 @@ export class IndexPage {
     /**
      * Gets the "fail response" DOM element.
      *
-     * @param {Element} the "fail response" element
+     * @return {Element} the "fail response" element
      */
     getResponseDivFail() {
         return this.getResponseDiv().find(SELECTOR_RESPONSE_FAIL_CLASS);

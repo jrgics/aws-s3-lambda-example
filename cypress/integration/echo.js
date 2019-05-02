@@ -17,7 +17,7 @@ describe('Echo', () => {
             // Click the "echo" button
             indexPage.clickEchoButton();
             // Check the response
-            indexPage.checkResponseSuccessMessage(getSuccessMessage(''));
+            indexPage.getResponseDivSuccess().should('contain', getSuccessMessage(''));
         });
 
     });
@@ -32,7 +32,7 @@ describe('Echo', () => {
             // Click the "echo" button
             indexPage.clickEchoButton();
             // Check the response
-            indexPage.checkResponseSuccessMessage(getSuccessMessage(message));
+            indexPage.getResponseDivSuccess().should('contain', getSuccessMessage(message));
         });
 
     });

@@ -32,7 +32,7 @@ describe('Reverse', () => {
             // Click the "reverse" button
             indexPage.clickReverseButton();
             // Check the response
-            indexPage.checkResponseSuccessMessage(getSuccessMessage(reverseString(message)));
+            indexPage.getResponseDivSuccess().should('contain', getSuccessMessage(reverseString(message)));
         });
 
     });
