@@ -32,7 +32,7 @@ describe('Uppercase', () => {
             // Click the "uppercase" button
             indexPage.clickUppercaseButton();
             // Check the response
-            indexPage.checkResponseSuccessMessage(getSuccessMessage(uppercaseString(message)));
+            indexPage.getResponseDivSuccess().should('contain', getSuccessMessage(uppercaseString(message)));
         });
 
     });
