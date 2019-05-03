@@ -17,7 +17,7 @@ describe('Uppercase', () => {
             // Click the "uppercase" button
             indexPage.clickUppercaseButton();
             // Check the response
-            indexPage.checkResponseFailMessage(getFailMessage());
+            indexPage.getResponseDivFail().should('contain', getFailMessage());
         });
 
     });

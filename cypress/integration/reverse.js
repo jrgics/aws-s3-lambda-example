@@ -17,7 +17,7 @@ describe('Reverse', () => {
             // Click the "reverse" button
             indexPage.clickReverseButton();
             // Check the response
-            indexPage.checkResponseFailMessage(getFailMessage());
+            indexPage.getResponseDivFail().should('contain', getFailMessage());
         });
 
     });
