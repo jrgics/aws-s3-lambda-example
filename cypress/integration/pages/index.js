@@ -54,17 +54,6 @@ export class IndexPage {
 
 
     /**
-     * Checks the fail message text. If the fail message does not contain the
-     * specified text, then the test will fail.
-     *
-     * @param {string} text the text to check
-     */
-    checkResponseFailMessage(text) {
-        this.getResponseDivFail().should('contain', text);
-    }
-
-
-    /**
      * Gets the "message" DOM element.
      *
      * @return {Element} the "message" element
