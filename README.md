@@ -54,7 +54,7 @@ Run the tests using the command `npm run test:api`.
 
 ### Deployed HTML
 
-The end-to-end or integration tests leverage [cypress](https://www.cypress.io/). The tests can be modified by using the command `npm run test:integration`.
+The end-to-end or integration tests leverage [cypress](https://www.cypress.io/). The tests can be modified by using the command `npm run test:integration:production`.
 
 To open the integration test editor, run `npm run test:design:integration`.
 

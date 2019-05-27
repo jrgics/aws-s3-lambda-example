@@ -10,7 +10,8 @@
     "test:lambda": "jest",
     "test:html": "mocha-headless-chrome -f test/html/index-spec.html",
     "test:api": "newman run -e test/api/env/develop.postman_environment.json test/api/specs/aws-sample.postman_collection.json",
-    "test:integration": "cypress run",
+    "test:integration:production": "rm cypress.env.json && cypress run",
+    "test:integration:local": "cp cypress.dev.json cypress.env.json && cypress run",
     "test:design:integration": "cypress open",
     "clean": "rm -rf dist",
     "build:s3": "mkdir -p dist/s3 && cp app/html/* dist/s3",
@@ -22,7 +23,7 @@
     "deploy:lambda:reverse": "npm run build:lambda:reverse && aws lambda update-function-code --function-name reverse --zip-file fileb://dist/lambda/reverse.zip",
     "deploy:lambda:uppercase": "npm run build:lambda:uppercase && aws lambda update-function-code --function-name uppercase --zip-file fileb://dist/lambda/uppercase.zip",
     "deploy:lambda": "npm run deploy:lambda:echo && npm run deploy:lambda:reverse && npm run deploy:lambda:uppercase",
-    "deploy": "npm run clean && npm test && npm run deploy:s3 && npm run deploy:lambda && npm run test:api && npm run test:integration"
+    "deploy": "npm run clean && npm test && npm run deploy:s3 && npm run deploy:lambda && npm run test:api && npm run test:integration:production"
   },
   "author": "John R. Ghidiu",
   "license": "MIT",
@@ -56,5 +57,10 @@
     "mocha-headless-chrome": "^2.0.2",
     "newman": "^4.4.1",
     "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "serve-handler": "^6.0.0",
+    "serve-static": "^1.13.2",
+    "wait-on": "^3.2.0"
   }
 }
