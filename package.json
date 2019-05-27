@@ -6,7 +6,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run test:lambda && npm run test:html",
+    "test": "npm run test:lambda && npm run test:html && npm run test:integration:local",
     "test:lambda": "jest",
     "test:html": "mocha-headless-chrome -f test/html/index-spec.html",
     "test:api": "newman run -e test/api/env/develop.postman_environment.json test/api/specs/aws-sample.postman_collection.json",
