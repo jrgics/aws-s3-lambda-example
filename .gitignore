@@ -5,3 +5,5 @@ dist/
 cypress/videos/
 cypress/support/
 cypress/plugins/
+cypress/screenshots/
+cypress.env.json
