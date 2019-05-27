@@ -81,13 +81,4 @@
         });
 
     });
-})(this.environment || {
-    // The production environment
-    api: {
-        endpoints: {
-            echo: 'https://fq6kxryc23.execute-api.us-west-2.amazonaws.com/default/echo',
-            reverse: 'https://swfqbizvq7.execute-api.us-west-2.amazonaws.com/default/reverse',
-            uppercase: 'https://j4xdtkvfo6.execute-api.us-west-2.amazonaws.com/default/uppercase'
-        }
-    }
-});
+})(this.environment);
