@@ -46,11 +46,11 @@ In the console, run `npm run test:html` to run the HTML tests.
 
 ### Deployed API's
 
-Using [postman](https://www.getpostman.com/) and [newman](https://www.npmjs.com/package/newman), the deployed API's can be tested. Be sure to modify the `test/api/env/develop.postman_environment.json` file to reflect appropriate endpoints to test.
+Using [postman](https://www.getpostman.com/) and [newman](https://www.npmjs.com/package/newman), the deployed API's can be tested. Be sure to modify the `test/api/env/production.postman_environment.json` file to reflect appropriate endpoints to test.
 
 These tests can be modified using the Postman application.
 
-Run the tests using the command `npm run test:api`.
+Run the tests using the command `npm run test:api:production`.
 
 ### Deployed HTML
 

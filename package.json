@@ -6,10 +6,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run test:lambda && npm run test:html && npm run test:integration:local",
+    "test": "npm run test:lambda && npm run test:html && npm run test:api:local && npm run test:integration:local",
     "test:lambda": "jest",
     "test:html": "mocha-headless-chrome -f test/html/index-spec.html",
-    "test:api": "newman run -e test/api/env/develop.postman_environment.json test/api/specs/aws-sample.postman_collection.json",
+    "test:api:production": "newman run -e test/api/env/production.postman_environment.json test/api/specs/aws-sample.postman_collection.json",
+    "test:api:local": "newman run -e test/api/env/local.postman_environment.json test/api/specs/aws-sample.postman_collection.json",
     "test:integration:production": "rm cypress.env.json && cypress run",
     "test:integration:local": "cp cypress.dev.json cypress.env.json && cypress run",
     "test:design:integration": "cypress open",
@@ -23,7 +24,7 @@
     "deploy:lambda:reverse": "npm run build:lambda:reverse && aws lambda update-function-code --function-name reverse --zip-file fileb://dist/lambda/reverse.zip",
     "deploy:lambda:uppercase": "npm run build:lambda:uppercase && aws lambda update-function-code --function-name uppercase --zip-file fileb://dist/lambda/uppercase.zip",
     "deploy:lambda": "npm run deploy:lambda:echo && npm run deploy:lambda:reverse && npm run deploy:lambda:uppercase",
-    "deploy": "npm run clean && npm test && npm run deploy:s3 && npm run deploy:lambda && npm run test:api && npm run test:integration:production"
+    "deploy": "npm run clean && npm test && npm run deploy:s3 && npm run deploy:lambda && npm run test:api:production && npm run test:integration:production"
   },
   "author": "John R. Ghidiu",
   "license": "MIT",
