@@ -7,9 +7,9 @@
         dev: {
             api: {
                 endpoints: {
-                    echo: 'http://localhost:3000/api/default/echo',
-                    reverse: 'http://localhost:3000/api/default/reverse',
-                    uppercase: 'http://localhost:3000/api/default/uppercase'
+                    echo: 'http://localhost:3000/api/echo',
+                    reverse: 'http://localhost:3000/api/reverse',
+                    uppercase: 'http://localhost:3000/api/uppercase'
                 }
             }
         },
