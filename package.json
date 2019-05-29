@@ -59,10 +59,5 @@
     "mocha-headless-chrome": "^2.0.2",
     "newman": "^4.4.1",
     "sinon": "^7.3.2"
-  },
-  "dependencies": {
-    "serve-handler": "^6.0.0",
-    "serve-static": "^1.13.2",
-    "wait-on": "^3.2.0"
   }
 }
