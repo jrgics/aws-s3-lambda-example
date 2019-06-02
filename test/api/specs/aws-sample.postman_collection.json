@@ -18,10 +18,10 @@
 							"});",
 							"",
 							"pm.test(\"Response contains the Content-Type header of 'application/json'\", function () {",
-							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
 							"});",
 							"",
-							"pm.test(\"JSON body contains a 'message' member with the passed in message reversed\", function () {",
+							"pm.test(\"JSON body contains a 'message' member with the passed in message\", function () {",
 							"    var jsonData = pm.response.json(),",
 							"        message = pm.variables.get(\"message\");",
 							"        ",
@@ -42,10 +42,9 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{api_echo}}?message={{message}}",
-					"protocol": "https",
+					"raw": "{{api_base}}{{api_echo}}?message={{message}}",
 					"host": [
-						"{{api_echo}}"
+						"{{api_base}}{{api_echo}}"
 					],
 					"query": [
 						{
@@ -70,7 +69,7 @@
 							"});",
 							"",
 							"pm.test(\"Response contains the Content-Type header of 'application/json'\", function () {",
-							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
 							"});",
 							"",
 							"pm.test(\"JSON body contains a 'message' member with the passed in message reversed\", function () {",
@@ -94,10 +93,9 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{api_reverse}}?message={{message}}",
-					"protocol": "https",
+					"raw": "{{api_base}}{{api_reverse}}?message={{message}}",
 					"host": [
-						"{{api_reverse}}"
+						"{{api_base}}{{api_reverse}}"
 					],
 					"query": [
 						{
@@ -194,10 +192,10 @@
 							"});",
 							"",
 							"pm.test(\"Response contains the Content-Type header of 'application/json'\", function () {",
-							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.contain('application/json');",
 							"});",
 							"",
-							"pm.test(\"JSON body contains a 'message' member with the passed in message reversed\", function () {",
+							"pm.test(\"JSON body contains a 'message' member with the passed in message uppercase\", function () {",
 							"    var jsonData = pm.response.json(),",
 							"        message = pm.variables.get(\"message\");",
 							"        ",
@@ -218,10 +216,9 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{api_uppercase}}?message={{message}}",
-					"protocol": "https",
+					"raw": "{{api_base}}{{api_uppercase}}?message={{message}}",
 					"host": [
-						"{{api_uppercase}}"
+						"{{api_base}}{{api_uppercase}}"
 					],
 					"query": [
 						{
@@ -258,7 +255,7 @@
 	],
 	"variable": [
 		{
-			"id": "99d02785-2bfa-47df-b24a-01d0626043d8",
+			"id": "ded2692d-cb35-47ba-a52f-854d031b6c9d",
 			"key": "message",
 			"value": "this is a message",
 			"type": "string"
