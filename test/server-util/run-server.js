@@ -1,14 +1,3 @@
-// Steps to get to running full w/env
-// [X] 1.) Serve local content w/ remote API
-// [X] 2.) Change API in local script to support environments (local/aws)
-// [X] 3.) Serve local API (mock it out)
-// [X] 4.) Get cypress to run against multiple environments
-// [X] 5.) Get postman to run against multiple environments
-// [X] 6.) Get cypress to run cli against local serve envrionment w/ startup & shutdown
-// [X] 7.) Get postman to run cli against local serve environment w/ startup & shutdown
-// [X] 8.) Integrate tests into package scripts
-// [ ] 9.) Incorporate into build/ci/cd
-
 let chalk = require('chalk');
 let express = require('express');
 let app = express();

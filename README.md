@@ -11,12 +11,28 @@ This example serves to illustrate some of the features of AWS, as well as modern
 
 All dependencies may be installed with `npm install`.
 
+## Running Locally
+
+The website can run locally. If the standalone server is used, API's will be run locally, as well. Be sure to append `?environment=dev` in order to
+have the website leverage the locally deployed API's.
+
+### Standalone Server
+
+In the console, run `npm serve:local`.
+
+### Using the IDE
+
+Some IDE's allow for live serving; check your IDE for reference. Using the live server functionality of the will not run the API's locally, so it is
+important to run against deployed API's in this case.
+
 ## Running Tests
 
 There are several types of tests which can be run:
 
 * Unit tests against the local lambda functions
 * Tests against the local HTML file
+* API tests against the local API's
+* Integration tests against the local HTML
 * API tests against the deployed API's
 * Integration tests against the deployed HTML
 
@@ -44,6 +60,14 @@ The page will refresh when tests are changed.
 
 In the console, run `npm run test:html` to run the HTML tests.
 
+### Local API's
+
+In the console, run `npm run test:api:local`.
+
+### Local Integration
+
+In the console, run `npm run test:integration:local`.
+
 ### Deployed API's
 
 Using [postman](https://www.getpostman.com/) and [newman](https://www.npmjs.com/package/newman), the deployed API's can be tested. Be sure to modify the `test/api/env/production.postman_environment.json` file to reflect appropriate endpoints to test.
@@ -57,6 +81,7 @@ Run the tests using the command `npm run test:api:production`.
 The end-to-end or integration tests leverage [cypress](https://www.cypress.io/). The tests can be modified by using the command `npm run test:integration:production`.
 
 To open the integration test editor, run `npm run test:design:integration`.
+
 
 ## Deploying
 
