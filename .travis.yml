@@ -19,9 +19,9 @@ install:
 script:
   - pip3 install awscli
   - npm install cypress
-  - $(npm bin)/cypress run --record
+  - npm test
 
-# before_install:
+  # before_install:
 #   ## The apt "awscli" client does not support Lambda yet; use pip
 #   - apt update
 #   - apt install -y python3-pip
