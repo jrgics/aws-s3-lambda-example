@@ -1,11 +1,21 @@
 language: node_js
 node_js:
-  - '10'
-before_install:
-  ## The apt "awscli" client does not support Lambda yet; use pip
-  - sudo apt-get install -y python3-pip
-  - sudo pip3 install awscli
-  - npm install
+  - 10
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
+      - libgconf-2-4
+      - awscli
+cache:
+  npm: true
+  directories:
+    # we also need to cache folder with Cypress binary
+    - ~/.cache
+install:
+  - npm ci
+before_script:
+  - npm install cypress
 script:
   - .travis/build.sh
 notifications:
