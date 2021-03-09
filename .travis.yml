@@ -1,13 +1,36 @@
 language: node_js
 node_js:
-  - '10'
-before_install:
-  ## The apt "awscli" client does not support Lambda yet; use pip
-  - sudo apt-get install -y python3-pip
-  - sudo pip3 install awscli
-  - npm install
+  - 10
+addons:
+  apt:
+    packages:
+      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
+      - libgconf-2-4
+      - python3-pip
+cache:
+  # Caches $HOME/.npm when npm ci is default script command
+  # Caches node_modules in all other cases
+  npm: true
+  directories:
+    # we also need to cache folder with Cypress binary
+    - ~/.cache
+install:
+  - npm ci
 script:
-  - .travis/build.sh
-notifications:
-  email:
-    - $GITHUB_EMAIL
+  - pip3 install awscli
+  - npm install cypress
+  - $(npm bin)/cypress run --record
+
+# before_install:
+#   ## The apt "awscli" client does not support Lambda yet; use pip
+#   - apt update
+#   - apt install -y python3-pip
+#   - apt install xvfb
+#   - pip3 install awscli
+#   - npm install
+#   - npm install --no-save cypress
+# script:
+#   - .travis/build.sh
+# notifications:
+#   email:
+#     - $GITHUB_EMAIL
