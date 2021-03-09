@@ -14,8 +14,6 @@ cache:
     - ~/.cache
 install:
   - npm ci
-before_script:
-  - npm install cypress
 script:
   - .travis/build.sh
 notifications:
