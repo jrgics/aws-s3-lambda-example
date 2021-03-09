@@ -16,9 +16,11 @@ cache:
     - ~/.cache
 install:
   - npm ci
-script:
+before_script:
   - pip3 install awscli
   # - npm install cypress
+script:
+  echo build is complete!
   # - .travis/build.sh
   # - npm test
 notifications:
