@@ -6,7 +6,7 @@ addons:
     packages:
       # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
       - libgconf-2-4
-      - python3-pip
+      - awscli
 cache:
   # Caches $HOME/.npm when npm ci is default script command
   # Caches node_modules in all other cases
@@ -17,12 +17,11 @@ cache:
 install:
   - npm ci
 before_script:
-  - pip3 install awscli
-  # - npm install cypress
+  - echo pip3 install awscli
+  - echo npm install cypress
 script:
-  echo build is complete!
-  # - .travis/build.sh
-  # - npm test
+  - echo build is complete!
+  - echo .travis/build.sh
 notifications:
   email:
     - $GITHUB_EMAIL
