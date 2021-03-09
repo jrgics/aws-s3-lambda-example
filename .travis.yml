@@ -17,7 +17,7 @@ install:
 before_script:
   - npm install cypress
 script:
-  - echo .travis/build.sh
+  - .travis/build.sh
 notifications:
   email:
     - $GITHUB_EMAIL
