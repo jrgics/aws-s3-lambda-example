@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-lambda-example",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A sample application showcasing AWS S3, Lamda and Gateway API",
   "directories": {
     "test": "test"
@@ -61,7 +61,7 @@
     "cypress": "^3.8.3",
     "express": "^4.17.1",
     "jest-cli": "^24.7.1",
-    "jquery": "3.4.0",
+    "jquery": "3.5.0",
     "mocha": "^6.1.4",
     "mocha-headless-chrome": "^2.0.2",
     "newman": "^4.4.1",
