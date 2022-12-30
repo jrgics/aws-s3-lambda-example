@@ -62,7 +62,7 @@
     "express": "^4.17.1",
     "jest-cli": "^24.7.1",
     "jquery": "3.5.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "mocha-headless-chrome": "^2.0.2",
     "newman": "^4.4.1",
     "open": "^6.3.0",
